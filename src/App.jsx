@@ -1,14 +1,14 @@
 import React from 'react'
-import Button from './componente/Button/Button'
+import NavBar from './componente/NavBar/NavBar'
+import ItemListContainer from './componente/ItemListContainer/ItemListContainer'
 
 const App = () => {
   return (
 
     <>
-        <h1>Hola Mundo</h1>
-        <p>Practicando</p>
-      <Button/>
+        <NavBar/>
 
+        <ItemListContainer mensaje="Pagina en contruccion, agradecemos la paciencia :))" />
     </>
 
   )
