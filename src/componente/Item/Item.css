@@ -1,0 +1,72 @@
+.cardProducto {
+  background-color: #6a1b9a;
+  border-radius: 16px;
+  width: 20rem;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cardProducto:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+.cardProducto img {
+  width: 100%;
+  max-width: 240px;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 0.5rem;
+}
+
+.cardProducto h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  text-align: center;
+  text-transform: uppercase;
+
+}
+
+.cardProducto h4 {
+  font-size: 1.0rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  text-align: center;
+   color: rgb(255, 255, 255);
+
+}
+
+.cardProducto p {
+  font-size: 0.95rem;
+  margin: 0.2rem 0 1rem;
+  opacity: 0.9;
+  color: rgb(251, 212, 249);
+  text-align: center;
+  margin-top: 10px;
+}
+
+.cardProducto button {
+  background-color: #4a0072;
+  color: #ffffff;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.cardProducto button:hover {
+  background-color: #370055;
+}

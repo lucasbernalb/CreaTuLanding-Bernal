@@ -1,0 +1,49 @@
+.itemCount {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.contador {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btnIcon {
+  background: none;
+  border: 1px solid var(--sombra-card);
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.btnIcon:hover {
+  background-color: var(--borde-suave);
+}
+
+.contadorNumero {
+  min-width: 30px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.btnAgregar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 50%;
+  max-width: 240px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  background-color: var(--color-acento);
+  color: white;
+}
+
+.btnAgregar:hover {
+  opacity: 0.9;
+}

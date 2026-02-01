@@ -5,6 +5,14 @@
  
 }
 
+.itemlist-container h2 {
+  max-width: 1200px;
+  margin: 24px auto;
+  padding: 0 16px;
+ text-transform: uppercase;
+ color: #6a1b9a;
+}
+
 .itemlist-alert {
   background-color:  #7c3aedd0;
   border-radius: 10px;
@@ -12,7 +20,6 @@
   margin: 15px;
   padding: 50px;
   text-align: center;
-  text-transform: uppercase;
   font-size: 20px;
   letter-spacing: 0.3px;
 }

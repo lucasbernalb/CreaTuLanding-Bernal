@@ -1,0 +1,24 @@
+:root {
+  /* Brand */
+  --color-primario: #6b0c9e;   /* violeta principal */
+  --color-secundario: #370055; /* violeta oscuro profundo */
+  --color-acento: #a855f7;     /* violeta brillante para botones / hover */
+
+  /* Fondos */
+  --fondo-app: #f7f3fb;        /* fondo general suave */
+  --fondo-card: #ffffff;      /* cards limpias */
+  --fondo-oscuro: #1b1026;     /* secciones dark / footer */
+
+  /* Texto */
+  --texto-principal: #300000;
+  --texto-secundario: #5f5f5f;
+  --texto-invertido: #ffffff;
+
+  /* Bordes & detalles */
+  --borde-suave: #e2d8ee;
+  --sombra-card: rgba(74, 0, 114, 0.15);
+
+  /* Estados */
+  --success: #6bcb77;
+  --danger: #e63946;
+}
