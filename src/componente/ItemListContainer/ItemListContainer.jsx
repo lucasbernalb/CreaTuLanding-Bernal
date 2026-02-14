@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Alert from 'react-bootstrap/Alert';
 import "./ItemListContainer.css";
 import { FaExclamationTriangle } from "react-icons/fa";
-import { getProductos, getProductosCategoria } from "../../asyncmock";
+// import { getProductos, getProductosCategoria } from "../../asyncmock";
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
-
-
+import { db } from '../../services/config';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 
 
 const Error = ({ mensajeError }) => {
@@ -38,31 +38,54 @@ if (idCategoria === "descuento") {
   titulo = "Cuadros en Descuento"
 }
 
+  useEffect(()=>   {
+    setLoading(true);
+    setError(false);
 
-useEffect(() => {
-  setLoading(true);
-  setError(false);
+      const misProductos = idCategoria ? query(collection(db, "cuadros"), where("idCat", "==", idCategoria)) : collection(db, "cuadros")
 
-  const fetchProductos = idCategoria
-    ? getProductosCategoria(idCategoria)
-    : getProductos();
+    getDocs(misProductos)
+      .then(res => {
+        const nuevoProductos = res.docs.map(doc => {
+          const data = doc.data()
 
-  fetchProductos
-    .then(respuesta => {
-      if (respuesta.length === 0) {
-        setError(true);
-      } else {
-        setProductos(respuesta);
-      }
-    })
-    .catch(() => {
-      setError(true);
-    })
-    .finally(() => {
-      setLoading(false);
-    });
+          return {id: doc.id, ...data}
+        })
+        setProductos(nuevoProductos)
+      })
+      .catch(() => {
+        setError (true)
+      })
+      .finally(() => {
+        setLoading(false)
+      })
 
-}, [idCategoria]);
+    }, [idCategoria]) 
+
+// useEffect(() => {
+//   setLoading(true);
+//   setError(false);
+
+//   const fetchProductos = idCategoria
+//     ? getProductosCategoria(idCategoria)
+//     : getProductos();
+
+//   fetchProductos
+//     .then(respuesta => {
+//       if (respuesta.length === 0) {
+//         setError(true);
+//       } else {
+//         setProductos(respuesta);
+//       }
+//     })
+//     .catch(() => {
+//       setError(true);
+//     })
+//     .finally(() => {
+//       setLoading(false);
+//     });
+
+// }, [idCategoria]);
 
 
   return (
