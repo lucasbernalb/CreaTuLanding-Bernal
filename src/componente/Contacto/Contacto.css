@@ -1,0 +1,93 @@
+.contact-section {
+  color: var(--texto-invertido);
+}
+
+.contact-card form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.contact-text {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.contact-divider {
+  width: 60px;
+  height: 4px;
+  background: var(--color-acento);
+  border-radius: 2px;
+}
+
+.contact-link {
+  color: var(--color-acento);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+.contact-card {
+  background-color: var(--fondo-oscuro);
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--borde-suave);
+}
+
+.contact-card .form-label {
+  color: white;
+  font-weight: 500;
+}
+
+.contact-card .form-control {
+  border-radius: 10px;
+  border: 1px solid var(--borde-suave);
+}
+
+.contact-card .form-control:focus {
+  border-color: var(--color-acento);
+  box-shadow: 0 0 0 0.2rem rgba(168, 85, 247, 0.25);
+}
+
+.contact-card button {
+  background-color: var(--boton-principal);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.contact-card button:hover {
+  background-color: var(--boton-principalhover);
+  transform: translateY(-2px);
+}
+
+
+.btn .contact-btn .loading {
+  background-color: var(--boton-secundario);
+  cursor: not-allowed;
+  opacity: 0.9;
+  transform: none;
+}
+
+.custom-alert {
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  animation: fadeIn 0.4s ease;
+}
+
+.success-toast {
+  background-color: var(--color-acento);
+  color: white;
+  border: 1px solid var(--color-acento);
+  border-radius: 8px;
+}

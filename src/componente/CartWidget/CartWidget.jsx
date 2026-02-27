@@ -3,24 +3,24 @@ import { FaShoppingCart } from "react-icons/fa";
 import { useContext } from 'react';
 import { CarritoContexto } from '../../context/CarritoContext';
 import { Link } from 'react-router-dom';
+import "./CartWidget.css";
 
 const CartIcon = () => {
-  return <FaShoppingCart size={24} style={{ marginRight: "40px", width: "45px", color: "#7c3aed"}} />;
+  return <FaShoppingCart size={24} />;
 };
 
 const CartWidget = () => {
-
-  const {cantidadTotal} = useContext(CarritoContexto)
+  const { cantidadTotal, animarCarrito } = useContext(CarritoContexto);
 
   return (
-    <div>
-      <Link to="/cart" >
-
-      <CartIcon/>
-      {
-        cantidadTotal >= 0 && <strong> {cantidadTotal} </strong>
-      }
-
+    <div className="cart-widget">
+      <Link to="/cart" className="cart-link">
+        <FaShoppingCart className={`cart-icon ${animarCarrito ? "bounce" : ""}`} />
+        {cantidadTotal > 0 && (
+          <span className="cart-badge">
+            {cantidadTotal}
+          </span>
+        )}
       </Link>
     </div>
   );

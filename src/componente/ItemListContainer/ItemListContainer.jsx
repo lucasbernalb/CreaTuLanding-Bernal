@@ -1,17 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import Alert from 'react-bootstrap/Alert';
+import React, { useState, useEffect } from "react";
 import "./ItemListContainer.css";
 import { FaExclamationTriangle } from "react-icons/fa";
-// import { getProductos, getProductosCategoria } from "../../asyncmock";
-import ItemList from '../ItemList/ItemList';
-import { useParams } from 'react-router-dom';
-import Spinner from 'react-bootstrap/Spinner';
-import { db } from '../../services/config';
-import { collection, getDocs, query, where } from 'firebase/firestore';
-
+import ItemList from "../ItemList/ItemList";
+import { useParams } from "react-router-dom";
+import { db } from "../../services/config";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import Loader from "../Loader/Loader";
 
 const Error = ({ mensajeError }) => {
-  return (
+  return ( 
     <div className="error-container">
       <FaExclamationTriangle className="error-icon" />
       <p className="error-code">Error 506</p>
@@ -19,100 +16,68 @@ const Error = ({ mensajeError }) => {
     </div>
   );
 };
-
-const ItemListContainer = ({ mensajeError }) => {
-
+ 
+const ItemListContainer = ({
+  mensajeError,
+  limite,
+  ocultarTitulo,
+}) => {
   const [productos, setProductos] = useState([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  const {idCategoria} = useParams()
+  const { idCategoria } = useParams();
 
-  let titulo = "Bienvenidos a Reina Artura"
+  let titulo = "Bienvenidos a Reina Artura";
 
-if (idCategoria === "tendencia") {
-  titulo = "Cuadros en Tendencia"
-}
+  if (idCategoria === "tendencia") {
+    titulo = "Cuadros en Tendencia";
+  }
 
-if (idCategoria === "descuento") {
-  titulo = "Cuadros en Descuento"
-}
+  if (idCategoria === "descuento") {
+    titulo = "Cuadros en Descuento";
+  }
 
-  useEffect(()=>   {
+  useEffect(() => {
     setLoading(true);
     setError(false);
 
-      const misProductos = idCategoria ? query(collection(db, "cuadros"), where("idCat", "==", idCategoria)) : collection(db, "cuadros")
+    const misProductos = idCategoria
+      ? query(collection(db, "cuadros"), where("idCat", "==", idCategoria))
+      : collection(db, "cuadros");
 
     getDocs(misProductos)
-      .then(res => {
-        const nuevoProductos = res.docs.map(doc => {
-          const data = doc.data()
+      .then((res) => {
+        const nuevoProductos = res.docs.map((doc) => {
+          const data = doc.data();
 
-          return {id: doc.id, ...data}
-        })
-        setProductos(nuevoProductos)
+          return { id: doc.id, ...data };
+        });
+        setProductos(limite ? nuevoProductos.slice(0, limite) : nuevoProductos);
       })
       .catch(() => {
-        setError (true)
+        setError(true);
       })
       .finally(() => {
-        setLoading(false)
-      })
-
-    }, [idCategoria]) 
-
-// useEffect(() => {
-//   setLoading(true);
-//   setError(false);
-
-//   const fetchProductos = idCategoria
-//     ? getProductosCategoria(idCategoria)
-//     : getProductos();
-
-//   fetchProductos
-//     .then(respuesta => {
-//       if (respuesta.length === 0) {
-//         setError(true);
-//       } else {
-//         setProductos(respuesta);
-//       }
-//     })
-//     .catch(() => {
-//       setError(true);
-//     })
-//     .finally(() => {
-//       setLoading(false);
-//     });
-
-// }, [idCategoria]);
-
+        setLoading(false);
+      });
+  }, [idCategoria]);
 
   return (
-    <div className="itemlist-container">
-      <Alert variant="success" className="itemlist-alert">
-
-       {loading && (
-        <Spinner animation="border" variant="primary" />
-        )}
-
-        {!loading && error && (
-          <Error mensajeError={mensajeError} />
-        )}
+    <div className={`itemlist-container ${idCategoria || ""}`}>
+      <div className="itemlist-card">
+        {loading && <Loader texto="Cargando cuadros..." />}
+        {!loading && error && <Error mensajeError={mensajeError} />}
 
         {!loading && !error && (
           <>
-
-          <h2>{titulo}</h2>
-      
-          <ItemList productos={productos} />
-          
+            {!ocultarTitulo && <h2>{titulo}</h2>}
+            <ItemList productos={productos} />
           </>
         )}
-
-      </Alert>
+      </div>
     </div>
   );
 };
 
-export default ItemListContainer
+export default ItemListContainer;

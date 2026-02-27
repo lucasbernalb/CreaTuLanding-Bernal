@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 12px;
   margin-top: 10px;
+  align-items: center;
 }
 
 .contador {
@@ -12,16 +13,17 @@
 }
 
 .btnIcon {
-  background: none;
-  border: 1px solid var(--sombra-card);
+  background: var(--boton-cuatro);
+  border: 1px solid var(--boton-cuatro);
   padding: 6px 10px;
   cursor: pointer;
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 15px;
+  color: white;
 }
 
 .btnIcon:hover {
-  background-color: var(--borde-suave);
+  background-color: var(--boton-cuatrohover);
 }
 
 .contadorNumero {
@@ -33,17 +35,34 @@
 .btnAgregar {
   display: flex;
   align-items: center;
-  gap: 8px;
-  width: 50%;
-  max-width: 240px;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;              
   padding: 10px;
   border: none;
   cursor: pointer;
-  border-radius: 6px;
-  background-color: var(--color-acento);
+  border-radius: 8px;
+  background-color: var(--boton-cuatro);
   color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: 0.25s ease;
+  white-space: nowrap;
 }
 
 .btnAgregar:hover {
+  background-color: var(--boton-cuatrohover);
   opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .contador {
+    justify-content: center;
+  }
+
+  .btnAgregar {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
 }

@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { CarritoContexto } from "../../context/CarritoContext";
 import { db } from "../../services/config";
 import { collection, addDoc, updateDoc, doc, getDoc } from "firebase/firestore";
+import "./Checkout.css";
 
 const Checkout = () => {
   const [nombre, setNombre] = useState("");
@@ -32,6 +33,7 @@ const orden = {
     id: producto.item.id,
     nombre: producto.item.nombre,
     cantidad: producto.cantidad,
+    img: producto.item.img,
   })),
   total,
   fecha: new Date(),
@@ -69,57 +71,98 @@ const orden = {
     })
   };
 
-  return (
-    <div>
-      <h2>Checkout:</h2>
-      <form onSubmit={manejadorFormulario}>
-        {carrito.map((producto) => (
-          <div key={producto.item.id}>
-            <p>
-              {producto.item.nombre} X {producto.cantidad}
-            </p>
-            <p>{producto.item.precio}</p>
-            <hr />
+ return (
+  <div className="checkout-container">
+    <h2 className="checkout-title">Finalizar Compra</h2>
+
+    <form className="checkout-form" onSubmit={manejadorFormulario}>
+      
+      <div className="checkout-grid">
+
+
+        <div className="checkout-resumen">
+          {carrito.map((producto) => (
+            <div key={producto.item.id} className="checkout-item">
+
+              <img 
+                src={producto.item.img} 
+                alt={producto.item.nombre}
+                className="checkout-img"
+              />
+
+              <div className="checkout-item-info">
+                <p className="item-name">
+                  {producto.item.nombre} x {producto.cantidad}
+                </p>
+                <p className="item-price">
+                  ${producto.item.precio}
+                </p>
+              </div>
+
+            </div>
+          ))}
+        </div>
+
+       
+        <div className="checkout-datos">
+
+          <div className="checkout-inputs">
+            <div className="form-group">
+              <label>Nombre</label>
+              <input type="text" onChange={(e) => setNombre(e.target.value)} />
+            </div>
+
+            <div className="form-group">
+              <label>Apellido</label>
+              <input type="text" onChange={(e) => setApellido(e.target.value)} />
+            </div>
+
+            <div className="form-group">
+              <label>Teléfono</label>
+              <input type="text" onChange={(e) => setTelefono(e.target.value)} />
+            </div>
+
+            <div className="form-group">
+              <label>Email</label>
+              <input type="email" onChange={(e) => setEmail(e.target.value)} />
+            </div>
+
+            <div className="form-group">
+              <label>Confirmar Email</label>
+              <input
+                type="email"
+                onChange={(e) => setEmailConfirmacion(e.target.value)}
+              />
+            </div>
           </div>
-        ))}
-        <div>
-          <label htmlFor="">Nombre</label>
-          <input type="text" onChange={(e) => setNombre(e.target.value)} />
-        </div>
-        <div>
-          <label htmlFor="">Apellido</label>
-          <input type="text" onChange={(e) => setApellido(e.target.value)} />
-        </div>
-        <div>
-          <label htmlFor="">Telefono</label>
-          <input type="text" onChange={(e) => setTelefono(e.target.value)} />
-        </div>
-        <div>
-          <label htmlFor="">Email</label>
-          <input type="email" onChange={(e) => setEmail(e.target.value)} />
-          <div></div>
-          <label htmlFor="">Email Confirmacion</label>
-          <input
-            type="email"
-            onChange={(e) => setEmailConfirmacion(e.target.value)}
-          />
+
         </div>
 
-        {
-            error && <p style={{color: "red"}}>{error}</p>
-        }
+      </div> 
 
-        <button type="submit">Confirmar Compra</button>
+      {error && <p className="checkout-error">{error}</p>}
 
-        {
-            ordenId && (
-                <strong>Gracias por tu compra! Tu numero de orden es: {ordenId}</strong>
-            )
-        }
+      
+      <div className="checkout-footer">
+        <h3 className="checkout-total-bottom">
+          Total: ${total}
+        </h3>
 
-      </form>
-    </div>
-  );
+        <button className="btn-confirm" type="submit">
+          Confirmar Compra
+        </button>
+      </div>
+
+      {ordenId && (
+        <p className="checkout-success">
+          Gracias por tu compra! Tu número de orden es:
+          <strong> {ordenId}</strong>
+        </p>
+      )}
+
+    </form>
+  </div>
+);
 };
 
 export default Checkout;

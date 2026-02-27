@@ -1,20 +1,14 @@
 import { useEffect, useState } from "react"
-// import { getUnProducto } from "../../asyncmock"
 import { ItemDetail } from "../ItemDetail/ItemDetail"
 import { useParams } from "react-router-dom"
-import Spinner from 'react-bootstrap/Spinner'
 import { db } from '../../services/config';
 import { getDoc, doc } from "firebase/firestore";
+import Loader from "../Loader/Loader";
 
 const ItemDetailContainer = () => {
 
     const [producto, setProducto] = useState(null)
     const { idItem } = useParams()
-
-    // useEffect(() => {
-    //     getUnProducto(Number(idItem))
-    //         .then(res => setProducto(res))
-    // }, [idItem])
 
     useEffect(() => {
         const nuevoDoc = doc(db, "cuadros", idItem)
@@ -32,7 +26,7 @@ const ItemDetailContainer = () => {
     if (!producto) {
         return (
             <div className="container d-flex justify-content-center mt-5">
-                <Spinner animation="border" variant="primary" />
+                <Loader/>
             </div>
         )
     }

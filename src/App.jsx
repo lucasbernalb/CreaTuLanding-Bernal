@@ -7,6 +7,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CarritoProvider } from "./context/CarritoContext";
 import Cart from "./componente/Cart/Cart";
 import Checkout from "./componente/Checkout/Checkout";
+import Footer from "./componente/Footer/Footer";
+import Home from "./componente/Home/Home";
+import Contacto from "./componente/Contacto/Contacto";
 
 const App = () => {
   return (
@@ -15,12 +18,17 @@ const App = () => {
         <CarritoProvider>
           <NavBar />
           <Routes>
-            <Route path="/"element={<ItemListContainer mensajeError="No se pudieron cargar los productos" />}/>
-            <Route path="/categoria/:idCategoria"element={<ItemListContainer />}/>
+            <Route path="/" element={<Home />} />
+            <Route path="/contacto" element={<Contacto />} />
+            <Route
+              path="/categoria/:idCategoria"
+              element={<ItemListContainer />}
+            />
             <Route path="/item/:idItem" element={<ItemDetailContainer />} />
-            <Route path="/cart" element={<Cart/>} />
-            <Route path="/checkout" element={<Checkout/>} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
+          <Footer/>
         </CarritoProvider>
       </BrowserRouter>
     </>

@@ -5,30 +5,171 @@
 }
 
 .cardProductoDetail {
-  display: flex;
-  gap: 40px;
-  max-width: 900px;
-  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1100px;
+  width: 90%;
+  padding: 60px;
+  border-radius: 20px;
+  background: #1b10267a;
 }
 
-.detailImg img {
-  width: 300px;
-  object-fit: cover;
-  border-radius: 8px;
+.detailImg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.frame img {
+  width: 100%;
+  max-width: 450px;
+  object-fit: contain;
 }
 
 .detailInfo {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  color: var(--color-primario);
+  color: white;
 }
 
-.detailInfo h3 {
-  font-size: 24px;
+.detailInfoStock {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--boton-terciariohover);
+}
+
+.detailInfo h2 {
+  font-size: 28px;
     text-transform: uppercase;
+    color: var(--boton-terciariohover);
+    margin-top: 10px;
 }
 
 .detailInfo h4 {
   font-size: 20px;
+}
+
+.linkTerminarCompra {
+  font-size: 1.05rem;           /* un poco más grande que texto normal */
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.linkTerminarCompra:hover {
+  text-decoration: underline;
+  color: var(--boton-terciariohover);
+}
+
+/* ============================= */
+/* EFECTO CUADRO EN GALERÍA */
+/* ============================= */
+
+.galleryWall {
+  background: linear-gradient(
+    to bottom,
+    #f5f5f5,
+    #e8e8e8
+  );
+  padding: 4rem 2rem;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 15px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* Marco del cuadro */
+.frame {
+  width: 450px;
+  height: 550px; /* tamaño fijo */
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.25),
+    0 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.frame img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Micro zoom elegante */
+.frame:hover img {
+  transform: scale(1.04);
+}
+
+.frame:hover {
+  transform: translateY(-6px);
+}
+
+.detailBackground {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detailOverlay {
+  width: 100%;
+  min-height: 100vh;
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detailImg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.miniGallery {
+  display: flex;
+  gap: 15px;
+}
+
+.miniGallery img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.3s ease;
+}
+
+.miniGallery img:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.fadeImage img {
+  transition: opacity 0.3s ease, transform 0.4s ease;
+}
+
+.fadeImage img {
+  transition: opacity 0.3s ease, transform 0.4s ease;
 }

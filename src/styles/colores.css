@@ -6,7 +6,7 @@
 
   /* Fondos */
   --fondo-app: #f7f3fb;        /* fondo general suave */
-  --fondo-card: #ffffff;      /* cards limpias */
+  --fondo-card: #fde2fd;      /* cards limpias */
   --fondo-oscuro: #1b1026;     /* secciones dark / footer */
 
   /* Texto */
@@ -21,4 +21,16 @@
   /* Estados */
   --success: #6bcb77;
   --danger: #e63946;
+  
+  /* Botones */
+  --boton-principal:  #6b1499;
+  --boton-principalhover:  #670e97;
+  --boton-secundario:  #4b0372;
+  --boton-secundariohover:  #591280;
+  --boton-terciario:  #a855f7;
+  --boton-terciariohover:  #be79ff;
+  --boton-cuatro:  #1b1026;
+  --boton-cuatrohover:  #241336;
+  --boton-claro:  #fde2fd;
+  --boton-clarohover:  #f6bde7;
 }

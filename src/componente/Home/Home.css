@@ -1,0 +1,70 @@
+.home-section {
+  padding: 80px 0;
+  color: white;
+}
+
+.home-title {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.benefits-section {
+  background-color: var(--color-primario);
+}
+
+.artist-section img {
+  max-height: 450px;
+  object-fit: cover;
+}
+
+.cta-section {
+  background-color: var(--fondo-oscuro);
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+  font-weight: 200;
+}
+
+.cta-section p {
+  font-size: 1.1rem;
+  opacity: 0.7;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  color: white;
+}
+
+.cta-section .btn {
+  padding: 15px 35px;
+  border-radius: 20px;
+  transition: 0.3s ease;
+  background-color: var(--boton-principal);
+  border-color: var(--boton-principalhover);
+  color: white;
+  white-space: nowrap;
+}
+
+.cta-section .btn:hover {
+  transform: scale(1.05);
+  background-color: var(--boton-principalhover);
+  border-color: var(--boton-principalhover);
+  color: var(--boton-clarohover);
+}
+
+
+.home-section.bg-retrato .home-title {
+  font-size: 2rem;
+  margin-right: 15px;
+}
+
+.home-section.bg-retrato h4 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+

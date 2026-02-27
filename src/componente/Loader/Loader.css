@@ -1,0 +1,22 @@
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.loader-spinner {
+  width: 3rem;
+  height: 3rem;
+  border-width: 0.3rem;
+  color: var(--color-acento); 
+}
+
+.loader-text {
+  margin-top: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: var(--color-acento);
+  letter-spacing: 1px;
+}
