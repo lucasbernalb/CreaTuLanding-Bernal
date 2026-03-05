@@ -68,10 +68,11 @@ const Contacto = () => {
         tamaño: "",
         descripcion: "",
       });
-    } catch (error) {
-      console.error("Error al enviar:", error);
-      setError(true);
-    }
+   } catch (error) {
+  console.error("Error completo:", error);
+  console.log("Mensaje:", error.message);
+  setError(true);
+}
 
     setLoading(false);
   };
@@ -234,3 +235,4 @@ const Contacto = () => {
 };
 
 export default Contacto;
+
