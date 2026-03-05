@@ -4,7 +4,15 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CarritoContexto } from "../../context/CarritoContext";
 
-export const ItemDetail = ({ id, nombre, precio, img, stock, imagenes }) => {
+export const ItemDetail = ({
+  id,
+  nombre,
+  precio,
+  img,
+  stock,
+  imagenes,
+  desc,
+}) => {
   const { agregarAlCarrito } = useContext(CarritoContexto);
 
   const [agregarCantidad, setAgregarCantidad] = useState(0);
@@ -27,7 +35,6 @@ export const ItemDetail = ({ id, nombre, precio, img, stock, imagenes }) => {
       <div className="detailOverlay">
         <div className="contenedorProductosDetail">
           <div className="cardProductoDetail">
-         
             <div className="detailImg">
               <div className="frame fadeImage">
                 <img
@@ -54,11 +61,12 @@ export const ItemDetail = ({ id, nombre, precio, img, stock, imagenes }) => {
               )}
             </div>
 
-          
             <div className="detailInfo">
               <h2>{nombre}</h2>
               <h4>Precio: ${precio}</h4>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p className="detailInfoDescripcion">
+                {desc} <b>{nombre}</b>
+              </p>
               <p className="detailInfoStock">STOCK: {stock}</p>
 
               {agregarCantidad > 0 ? (

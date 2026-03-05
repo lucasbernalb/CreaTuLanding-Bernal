@@ -2,42 +2,62 @@ import React from "react";
 import CartWidget from "../CartWidget/CartWidget";
 import { useState, useEffect } from "react";
 import "./NavBar.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
-
   const [scrolled, setScrolled] = useState(false);
 
-useEffect(() => {
-  const handleScroll = () => {
-    setScrolled(window.scrollY > 50);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
 
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header className={scrolled ? "scrolled" : ""}>
-      <Link to="/">
+      <NavLink to="/">
         <h1 className="header-logo">Reina Artura</h1>
-      </Link>
+      </NavLink>
 
       <nav>
         <ul>
           <li>
-            <Link to="categoria/tendencia"> Tendencias </Link>
+            <NavLink
+              to="/categoria/tendencia"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Tendencias
+            </NavLink>
           </li>
+
           <li>
-            <Link to="categoria/descuento"> Descuentos </Link>
+            <NavLink
+              to="/categoria/descuento"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Descuentos
+            </NavLink>
           </li>
+
           <li>
-            <Link> Biografia </Link>
+            <NavLink
+              to="/biografia"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Biografía
+            </NavLink>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/contacto">
+
+          <li>
+            <NavLink
+              to="/contacto"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
               Contacto
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>

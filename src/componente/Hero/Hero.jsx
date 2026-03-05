@@ -6,10 +6,9 @@ const Hero = () => {
     <section className="hero">
       <div className="hero-overlay">
         <div className="hero-content">
-          <h1>Título Principal</h1>
+          <h1>Bienvenido/a a Reina Artura</h1>
           <p>
-            Este es un texto descriptivo del hero. Luego podés editarlo con tu
-            mensaje comercial o promocional.
+           Arte como forma de vivir
           </p>
           <div className="hero-buttons">
             <Link to="/categoria/tendencia" className="btn-primary">

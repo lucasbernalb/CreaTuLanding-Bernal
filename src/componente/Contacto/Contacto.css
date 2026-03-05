@@ -1,44 +1,106 @@
+/* ============================= */
+/* SECTION GENERAL */
+/* ============================= */
+
 .contact-section {
   color: var(--texto-invertido);
 }
 
-.contact-card form {
-  max-width: 500px;
-  margin: 0 auto;
-}
+/* ============================= */
+/* TITULOS Y TEXTO */
+/* ============================= */
 
 .contact-title {
+  font-family: var(--fuente-swanky);
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .contact-text {
+  font-family: var(--fuente-poiret);
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
   color: rgba(255, 255, 255, 0.75);
 }
 
 .contact-divider {
-  width: 60px;
+  width: 100px;
   height: 4px;
   background: var(--color-acento);
   border-radius: 2px;
 }
 
+/* ============================= */
+/* BENEFITS LIST */
+/* ============================= */
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefits-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+  font-family: var(--fuente-poiret);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.benefits-list .icon {
+  width: 26px;
+  min-width: 26px;
+  font-size: 1.2rem;
+  color: var(--color-acento);
+  transition: 0.3s ease;
+}
+
+.benefits-list li:hover .icon {
+  transform: scale(1.15);
+}
+
+/* ============================= */
+/* LINKS REDES */
+/* ============================= */
+
 .contact-link {
+  font-family: var(--fuente-swanky);
+  font-size: 1.5rem;
   color: var(--color-acento);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .contact-link:hover {
   text-decoration: underline;
 }
 
+/* ============================= */
+/* CARD */
+/* ============================= */
+
 .contact-card {
+  font-family: var(--fuente-poiret);
+  font-size: 1.2rem;
   background-color: var(--fondo-oscuro);
   border-radius: 18px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   border: 1px solid var(--borde-suave);
 }
+
+.contact-card form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+/* ============================= */
+/* FORM */
+/* ============================= */
 
 .contact-card .form-label {
   color: white;
@@ -55,29 +117,37 @@
   box-shadow: 0 0 0 0.2rem rgba(168, 85, 247, 0.25);
 }
 
-.contact-card button {
+/* ============================= */
+/* BOTON */
+/* ============================= */
+
+.contact-btn {
   background-color: var(--boton-principal);
   color: white;
   border: none;
   border-radius: 10px;
   font-weight: 600;
   transition: all 0.3s ease;
+  margin-top: 15px;
 }
 
-.contact-card button:hover {
+.contact-btn:hover {
   background-color: var(--boton-principalhover);
   transform: translateY(-2px);
 }
 
-
-.btn .contact-btn .loading {
+.contact-btn.loading {
   background-color: var(--boton-secundario);
   cursor: not-allowed;
   opacity: 0.9;
   transform: none;
 }
 
-.custom-alert {
+/* ============================= */
+/* TOASTS */
+/* ============================= */
+
+.toast-alert {
   padding: 1rem;
   border-radius: 10px;
   margin-bottom: 1rem;
@@ -89,5 +159,42 @@
   background-color: var(--color-acento);
   color: white;
   border: 1px solid var(--color-acento);
-  border-radius: 8px;
+}
+
+.error-toast {
+  background-color: #dc3545;
+  color: white;
+  border: 1px solid #dc3545;
+}
+
+/* ============================= */
+/* ANIMACION */
+/* ============================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================= */
+/* PLACEHOLDER MAS VISIBLE */
+/* ============================= */
+
+.contact-card .form-control::placeholder {
+  color: rgba(0, 0, 0, 0.549);
+  opacity: 1; /* importante para que no lo haga más transparente */
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+/* Para que el texto escrito también tenga más presencia */
+.contact-card .form-control {
+  color: rgb(255, 255, 255);
+  font-weight: 500;
 }

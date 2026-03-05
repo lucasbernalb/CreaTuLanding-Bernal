@@ -8,7 +8,7 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import Loader from "../Loader/Loader";
 
 const Error = ({ mensajeError }) => {
-  return ( 
+  return (
     <div className="error-container">
       <FaExclamationTriangle className="error-icon" />
       <p className="error-code">Error 506</p>
@@ -16,12 +16,8 @@ const Error = ({ mensajeError }) => {
     </div>
   );
 };
- 
-const ItemListContainer = ({
-  mensajeError,
-  limite,
-  ocultarTitulo,
-}) => {
+
+const ItemListContainer = ({ mensajeError, limite, ocultarTitulo }) => {
   const [productos, setProductos] = useState([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);

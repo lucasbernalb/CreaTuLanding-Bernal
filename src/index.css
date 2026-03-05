@@ -1,18 +1,17 @@
-/* RESET BÁSICO */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY GLOBAL */
+
 body {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, var(--fondo-oscuro), var(--color-primario));
   color: #ffffff;
 }
 
-/* Para que el root ocupe toda la pantalla */
 
 .titulo {
   text-align: center;

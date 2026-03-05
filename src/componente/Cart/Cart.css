@@ -1,11 +1,11 @@
-/* CONTENEDOR PRINCIPAL */
+
 .cart-container {
   max-width: 1000px;
   margin: 40px auto;
   padding: 20px;
 }
 
-/* TITULO */
+
 .cart-title {
   text-align: center;
   margin-bottom: 30px;
@@ -16,14 +16,13 @@
   border-radius: 10px;
 }
 
-/* LISTA DE ITEMS */
 .cart-items {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* RESUMEN */
+
 .cart-summary {
   margin-top: 40px;
   padding: 20px;
@@ -37,7 +36,7 @@
   color: white;
 }
 
-/* BOTONES */
+
 .cart-buttons {
   display: flex;
   justify-content: flex-end;
@@ -45,7 +44,6 @@
   flex-wrap: wrap;
 }
 
-/* BOTÓN VACIAR */
 .btn-clear {
   background-color: var(--boton-terciario);
   color: white;
@@ -61,7 +59,6 @@
   transform: translateY(-2px);
 }
 
-/* BOTÓN CHECKOUT */
 .btn-checkout {
   background-color: var(--boton-cuatro);
   color: white;
@@ -76,7 +73,7 @@
   transform: translateY(-2px);
 }
 
-/* CARRITO VACÍO */
+
 .cart-empty {
   text-align: center;
   margin-top: 80px;

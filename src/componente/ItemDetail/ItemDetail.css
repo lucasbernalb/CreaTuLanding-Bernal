@@ -35,28 +35,41 @@
   color: white;
 }
 
+.detailInfo h2 {
+  font-family: var(--fuente-swanky);
+  font-size: 3rem;
+  color: var(--boton-terciariohover);
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.detailInfo h4 {
+  font-family: var(--fuente-pacifico);
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+}
+
+.detailInfoDescripcion{
+  font-family: var(--fuente-poiret);
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
 .detailInfoStock {
-  font-size: 14px;
+  font-family: var(--fuente-swanky);
+  font-size: 1.2rem;
+  font-weight: 700;
   display: flex;
   flex-direction: column;
   gap: 12px;
   color: var(--boton-terciariohover);
 }
 
-.detailInfo h2 {
-  font-size: 28px;
-    text-transform: uppercase;
-    color: var(--boton-terciariohover);
-    margin-top: 10px;
-}
-
-.detailInfo h4 {
-  font-size: 20px;
-}
-
 .linkTerminarCompra {
-  font-size: 1.05rem;           /* un poco más grande que texto normal */
-  font-weight: 600;
+  font-family: var(--fuente-swanky);
+  font-size: 1.5rem;           /* un poco más grande que texto normal */
+  font-weight: 700;
+  letter-spacing: 1px;
   color: white;
   text-decoration: none;
   transition: color 0.2s ease, transform 0.2s ease;
@@ -67,9 +80,6 @@
   color: var(--boton-terciariohover);
 }
 
-/* ============================= */
-/* EFECTO CUADRO EN GALERÍA */
-/* ============================= */
 
 .galleryWall {
   background: linear-gradient(
@@ -85,7 +95,6 @@
   box-shadow: inset 0 15px 40px rgba(0, 0, 0, 0.05);
 }
 
-/* Marco del cuadro */
 .frame {
   width: 450px;
   height: 550px; /* tamaño fijo */
@@ -110,7 +119,6 @@
   transition: transform 0.4s ease;
 }
 
-/* Micro zoom elegante */
 .frame:hover img {
   transform: scale(1.04);
 }

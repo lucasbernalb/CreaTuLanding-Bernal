@@ -1,12 +1,13 @@
 .itemlist-container {
   max-width: 1200px;
-  margin: 24px auto;
-  padding: 0 16px;
+  margin: 20px auto;
+  padding: 0 26px;
+  border-radius: 10px;
 }
 
 .itemlist-container h2 {
   max-width: 1200px;
-  margin: 24px auto;
+  margin: 2px auto;
   padding: 0 16px;
   text-transform: uppercase;
   color: white;
@@ -17,7 +18,7 @@
   background-color: var(--fondo-oscuro);
   border-radius: 12px;
   padding: 40px;
-  margin: 20px 0;
+  margin: 2px 0;
   color: white;
   text-align: center;
 }
@@ -29,8 +30,8 @@
 }
 
 .error-icon {
-    margin-top: 10px;
-    font-size: 48px;
+  margin-top: 10px;
+  font-size: 48px;
 }
 
 .error-code {
@@ -38,9 +39,7 @@
   font-size: 15px;
 }
 
-/* ========================= */
-/* TENDENCIA */
-/* ========================= */
+
 
 .itemlist-container.tendencia {
   background: linear-gradient(180deg, #190e23, #1b1026);
@@ -49,10 +48,11 @@
 }
 
 .itemlist-container.tendencia h2 {
-  color: var(--boton-terciariohover);
-  font-size: 2.8rem;
+  font-family: var(--fuente-swanky);
+  color: var(--boton-terciario);
+  font-size: 3.5rem;
+  font-weight: 600;
   letter-spacing: 4px;
-  text-transform: uppercase;
   margin-bottom: 50px;
   position: relative;
 }
@@ -61,14 +61,11 @@
   content: "";
   width: 90px;
   height: 3px;
-  background: var(--boton-clarohover);
+  background: var(--color-acento);
   display: block;
   margin: 20px auto 0;
 }
 
-/* ========================= */
-/* DESCUENTO */
-/* ========================= */
 
 .itemlist-container.descuento {
   background: linear-gradient(180deg, #190e23, #1b1026);
@@ -77,10 +74,11 @@
 }
 
 .itemlist-container.descuento h2 {
-  color: var(--boton-terciariohover);
-  font-size: 2.8rem;
+  font-family: var(--fuente-swanky);
+  color: var(--boton-terciario);
+  font-size: 3.5rem;
+  font-weight: 600;
   letter-spacing: 4px;
-  text-transform: uppercase;
   margin-bottom: 50px;
   position: relative;
 }
@@ -89,7 +87,7 @@
   content: "";
   width: 90px;
   height: 3px;
-  background: var(--boton-clarohover);
+  background: var(--color-acento);
   display: block;
   margin: 20px auto 0;
 }

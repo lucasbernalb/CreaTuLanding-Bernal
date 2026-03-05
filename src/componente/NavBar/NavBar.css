@@ -19,8 +19,8 @@ header {
 
   border-bottom: 1px solid var(--color-secundario);
 
-  background: rgba(15, 15, 20, 0.85); /* semi transparente */
-  backdrop-filter: blur(10px); /* efecto glass */
+  background: rgba(15, 15, 20, 0.85); 
+  backdrop-filter: blur(10px); 
   -webkit-backdrop-filter: blur(10px);
 }
 
@@ -32,6 +32,7 @@ header.scrolled {
 header a {
   text-decoration: none;
   color: inherit;
+
 }
 
 
@@ -47,41 +48,57 @@ header a {
   cursor: pointer;
 }
 
-nav a {
-  text-decoration: none;
-  color: inherit;
+nav ul {
+  list-style: none;
 }
 
 nav li {
   display: inline-block;
-  font-family: sans-serif;
   margin-left: 25px;
   margin-top: 10px;
   text-transform: uppercase;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 900;
+  font-family: var(--fuente-poiret);
+}
+
+
+nav a {
+  text-decoration: none;
   color: var(--boton-terciariohover);
-  cursor: pointer;
-  transition: color 0.2s ease;
+  letter-spacing: 2px;
   position: relative;
+  transition: color 0.2s ease;
 }
 
-nav li:hover {
-  color: var(--color-acento);
+
+nav a:hover {
+  color: var(--boton-clarohover);
 }
 
-nav li::after {
+
+nav a::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: -6px;
   width: 0%;
   height: 2px;
-  background-color: var(--color-acento);
+  background-color: var(--boton-clarohover);
   transition: width 0.3s ease;
 }
 
-nav li:hover::after {
+
+nav a:hover::after {
   width: 100%;
 }
 
+
+nav a.active {
+  color: var(--boton-clarohover);
+}
+
+
+nav a.active::after {
+  width: 100%;
+}

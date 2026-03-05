@@ -5,19 +5,129 @@
 
 .home-title {
   text-align: center;
-  margin-bottom: 50px;
-  font-size: 2.5rem;
-  font-weight: 600;
+  margin-bottom: 20px;
 }
 
-.benefits-section {
-  background-color: var(--color-primario);
+.obras-title {
+  font-family: var(--fuente-swanky);
+  font-size: 5em;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.home-section.artist-section h2 {
+  font-family: var(--fuente-swanky);
+  letter-spacing: 1px;
+  font-size: 38px;
+}
+
+.home-section.artist-section p {
+  font-family: var(--fuente-poiret);
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
 }
 
 .artist-section img {
   max-height: 450px;
   object-fit: cover;
 }
+
+.benefits-section {
+  background: linear-gradient(230deg, #a855f7, #6b0c9e, #4a0270);
+}
+
+.home-section.benefits-section h5 {
+  font-family: var(--fuente-swanky);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-left: 20px;
+  letter-spacing: 1px;
+}
+
+.home-section.benefits-section p {
+  font-family: var(--fuente-poiret);
+  margin-left: 22px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.benefits-section h5 {
+  white-space: nowrap;
+}
+
+
+.home-section-encargo {
+  color: white;
+  padding: 80px 0;
+}
+
+.proceso-title {
+  font-family: var(--fuente-swanky);
+  font-size: 38px;
+  letter-spacing: 1px;
+  margin-right: 50px;
+}
+
+.proceso-row {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+}
+
+.proceso-col {
+  display: flex;
+  padding: 12px;
+}
+
+.proceso-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 28px 15px;
+  border-radius: 16px;
+  transition: 0.3s ease;
+  backdrop-filter: blur(6px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center; 
+
+  text-align: center;  
+
+  width: 100%;
+  height: 100%;
+}
+
+.proceso-item:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.proceso-icon {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: var(--color-acento);
+  transition: 0.3s ease;
+}
+
+.proceso-item:hover .proceso-icon {
+  transform: scale(1.1);
+}
+
+.proceso-item h4 {
+  font-family: var(--fuente-swanky);
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+
+.proceso-item p {
+  font-family: var(--fuente-poiret);
+  font-size: 1rem;
+  letter-spacing: 0.4px;
+  opacity: 0.85;
+  flex-grow: 1; /* iguala altura aunque haya menos texto */
+}
+
 
 .cta-section {
   background-color: var(--fondo-oscuro);
@@ -27,20 +137,25 @@
 }
 
 .cta-section h2 {
+  font-family: var(--fuente-poiret);
   font-size: 2.5rem;
-  margin-bottom: 5px;
-  font-weight: 200;
+  font-weight: 600;
 }
 
 .cta-section p {
-  font-size: 1.1rem;
+  font-family: var(--fuente-swanky);
+  font-size: 1.6em;
   opacity: 0.7;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin: 0 3rem;
   color: white;
 }
 
 .cta-section .btn {
+  font-family: var(--fuente-poiret);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   padding: 15px 35px;
   border-radius: 20px;
   transition: 0.3s ease;
@@ -56,15 +171,3 @@
   border-color: var(--boton-principalhover);
   color: var(--boton-clarohover);
 }
-
-
-.home-section.bg-retrato .home-title {
-  font-size: 2rem;
-  margin-right: 15px;
-}
-
-.home-section.bg-retrato h4 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-}
-

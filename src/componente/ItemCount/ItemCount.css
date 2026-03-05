@@ -27,24 +27,27 @@
 }
 
 .contadorNumero {
+  font-family: var(--fuente-pacifico);
   min-width: 30px;
   text-align: center;
-  font-size: 16px;
+  font-size: 2rem;
 }
 
 .btnAgregar {
+  font-family: var(--fuente-poiret);
+  letter-spacing: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 15px;
-  width: 100%;              
+  width: 100%;
   padding: 10px;
   border: none;
   cursor: pointer;
   border-radius: 8px;
   background-color: var(--boton-cuatro);
   color: white;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.95rem;
   transition: 0.25s ease;
   white-space: nowrap;

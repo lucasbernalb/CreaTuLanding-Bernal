@@ -1,13 +1,23 @@
 .hero {
   height: 100vh;
-  background-image: url("../../../public/img/hero/hero.jpeg"); /* ACA VAS A PONER TU IMAGEN */
+
+  background-image: url("../../../public/img/hero/hero.jpeg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* 🔥 EFECTO PARALLAX */
+  background-attachment: fixed;
+
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .hero-overlay {
@@ -46,13 +56,15 @@
   letter-spacing: 1px;
   margin-bottom: 25px;
   line-height: 1.2;
-  color: var(--boton-clarohover);
+  font-family: var(--fuente-pacifico);
 }
 
 .hero-content p {
-  font-size: 1.5rem;
-  opacity: 0.9;
+  font-family: var(--fuente-poiret);
+  font-size: 2rem;
+  font-weight: 700;
   margin-bottom: 35px;
+  
 }
 
 .hero-buttons {
@@ -63,13 +75,15 @@
 }
 
 .btn-primary {
+  font-family: var(--fuente-poiret);
   padding: 14px 30px;
   background: var(--color-acento);
   color: white;
   text-decoration: none;
-  border-radius: 40px;
+  border-radius: 20px;
   transition: all 0.3s ease;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
 .btn-primary:hover {
@@ -78,13 +92,16 @@
 }
 
 .btn-secondary {
+  font-family: var(--fuente-poiret);
+  font-weight: 900;
   padding: 14px 30px;
   border: 1px solid white;
   color: white;
   text-decoration: none;
-  border-radius: 40px;
+  border-radius: 30px;
   transition: all 0.3s ease;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
 }
 
 .btn-secondary:hover {

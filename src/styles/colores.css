@@ -1,28 +1,23 @@
 :root {
-  /* Brand */
-  --color-primario: #6b0c9e;   /* violeta principal */
-  --color-secundario: #370055; /* violeta oscuro profundo */
-  --color-acento: #a855f7;     /* violeta brillante para botones / hover */
+ 
+  --color-primario: #6b0c9e;   
+  --color-secundario: #370055;
+  --color-acento: #a855f7;    
 
-  /* Fondos */
-  --fondo-app: #f7f3fb;        /* fondo general suave */
-  --fondo-card: #fde2fd;      /* cards limpias */
-  --fondo-oscuro: #1b1026;     /* secciones dark / footer */
+ 
+  --fondo-app: #f7f3fb;        
+  --fondo-card: #fde2fd;     
+  --fondo-oscuro: #1b1026;    
+  
 
-  /* Texto */
-  --texto-principal: #300000;
-  --texto-secundario: #5f5f5f;
-  --texto-invertido: #ffffff;
-
-  /* Bordes & detalles */
   --borde-suave: #e2d8ee;
   --sombra-card: rgba(74, 0, 114, 0.15);
 
-  /* Estados */
+
   --success: #6bcb77;
   --danger: #e63946;
   
-  /* Botones */
+
   --boton-principal:  #6b1499;
   --boton-principalhover:  #670e97;
   --boton-secundario:  #4b0372;

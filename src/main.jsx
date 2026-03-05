@@ -5,6 +5,7 @@ import App from './App.jsx'
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./styles/colores.css";
+import "./styles/fuentes.css";
 
 
 createRoot(document.getElementById('root')).render(
